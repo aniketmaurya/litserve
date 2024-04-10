@@ -333,8 +333,6 @@ class LitServer:
                             return
                         yield data
 
-                raise HTTPException(status_code=504, detail="Request timed out")
-
             async def fake_stream():
                 for i in range(10):
                     yield "i"
