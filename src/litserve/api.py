@@ -48,6 +48,11 @@ class LitAPI(ABC):
         """Run the model on the input and return the output."""
         pass
 
+    @abstractmethod
+    def stream_predict(self, x):
+        """Run the model on the input and stream the output."""
+        pass
+
     def unbatch(self, output):
         """Convert a batched output to a list of outputs."""
         if hasattr(output, "__torch_function__") or output.__class__.__name__ == "ndarray":
