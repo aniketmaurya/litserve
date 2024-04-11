@@ -333,10 +333,6 @@ class LitServer:
                             return
                         yield data
 
-            async def fake_stream():
-                for i in range(10):
-                    yield "i"
-
             return StreamingResponse(data_streamer())
 
     def generate_client_file(self):
